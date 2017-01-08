@@ -5,10 +5,11 @@
 <link href="css/index.css" rel="stylesheet">
 </head>
 <body>
-<form action="/search" method="post">
-    <input type="text" id="keyword" name="keyword">
-    <input type="submit">
-</form>
+<% @items.each do |data| %>
+<h3><%= data["volumeInfo"]["title"] %></h3>
+<img src="<%= data["volumeInfo"]["imageLinks"]["smallThumbnail"] %>">
+<h3><%= data["volumeInfo"]["description"] %></h3>
+<% end %>
 <script type="text/javascript"></script>
 </body>
 </html>
