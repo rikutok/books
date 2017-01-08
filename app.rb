@@ -7,12 +7,18 @@ require 'uri'
 require 'json'
 
 post '/search' do
+    
     keyword = params[:keyword];
-    uri = URI.parse('https://www.googleapis.com/books/v1/volumes?q=' + keyword + '&country=JP')
+    uri_escape = URI.escape('https://www.googleapis.com/books/v1/volumes?q=' + keyword + '&country=JP')
+    uri = URI.parse(uri_escape)
     json = Net::HTTP.get(uri)
     result = JSON.parse(json)
     @items = result['items']
-    erb :index2 
+    if result
+        erb :index2
+    else
+        erb :index
+    end
 end
 
 get '/' do

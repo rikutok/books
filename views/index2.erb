@@ -6,8 +6,8 @@
 </head>
 <body>
 <% @items.each do |data| %>
-<h3><%= data["volumeInfo"]["title"] %></h3>
-<img src="<%= data["volumeInfo"]["imageLinks"]["smallThumbnail"] %>">
+<a href="<%= data["volumeInfo"]["previewLink"] %>"><%= data["volumeInfo"]["title"] %></h3>
+<img src="<%= data["volumeInfo"]["imageLinks"]["thumbnail"] %>">
 <h3><%= data["volumeInfo"]["description"] %></h3>
 <% end %>
 <script type="text/javascript"></script>
