@@ -2,13 +2,41 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="css/index.css" rel="stylesheet">
+<style>
+    body{
+        background-color:skyblue;
+        text-align:center;
+    }
+    #keyword{
+        width:200px;
+        height:30px;
+        font-size:30px;
+    }
+    #titles{
+        font-size:30px;
+    }
+    #contents{
+        background-color:blue;
+        color:black;
+    }
+    #back{
+        position:absolute;
+        left:30px;
+        width:50px;
+        height:40px;
+    }
+</style>
 </head>
 <body>
+<form action="/" method="get" id="back">
+    <input type="submit" value="戻る">
+</form>
 <% @items.each do |data| %>
-<a href="<%= data["volumeInfo"]["previewLink"] %>"><%= data["volumeInfo"]["title"] %></h3>
+<a href="https://www.amazon.co.jp/s/ref=nb_sb_ss_i_5_11?__mk_ja_JP=カタカナ&url=search-alias%3Dstripbooks&field-keywords=<%= data["volumeInfo"]["title"] %>" target="_blank" id="titles"><%= data["volumeInfo"]["title"] %></h3>
+<!--https://www.amazon.co.jp/s/ref=nb_sb_ss_i_5_11?__mk_ja_JP=カタカナ&url=search-alias%3Dstripbooks&field-keywords=   アマゾン-->
+<!--http://product.rakuten.co.jp/search/?search_mode=200162&q=   楽天-->
 <img src="<%= data["volumeInfo"]["imageLinks"]["thumbnail"] %>">
-<h3><%= data["volumeInfo"]["description"] %></h3>
+<p id="contents"><%= data["volumeInfo"]["description"] %></p>
 <% end %>
 <script type="text/javascript"></script>
 </body>

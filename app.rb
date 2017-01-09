@@ -14,7 +14,7 @@ post '/search' do
     json = Net::HTTP.get(uri)
     result = JSON.parse(json)
     @items = result['items']
-    if result
+    if @items
         erb :index2
     else
         erb :index
