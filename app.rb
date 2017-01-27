@@ -6,6 +6,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
+
 post '/search' do
     
     keyword = params[:keyword];
@@ -15,12 +16,16 @@ post '/search' do
     result = JSON.parse(json)
     @items = result['items']
     if @items
-        erb :index2
+        erb :search2
     else
-        erb :index
+        erb :search
     end
 end
 
 get '/' do
     erb :index
+end
+
+get '/search_on' do
+   erb :search
 end

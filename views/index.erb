@@ -2,23 +2,38 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Latest compiled and minified CSS --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> <!-- Optional theme --> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> <!-- Latest compiled and minified JavaScript --> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 <style>
     body{
         background-color:skyblue;
-        text-align:center;
-    }
-    #keyword{
-        width:200px;
-        height:30px;
-        font-size:30px;
     }
 </style>
 </head>
 <body>
-<form action="/search" method="post">
-    <input type="text" id="keyword" name="keyword">
-    <input type="submit" value="検索">
-</form>
+<div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+        <a href="/search_on">検索欄へ</a>
+        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="glyphiicon glyphiicon-triangle-right"></span>
+                </div>
+                <div class="panel-body">
+                    <form action="/" method="post">
+                        <h2>タイトル(20文字まで)</h2>
+                        <input type="text" required placeholder="タイトルを入力" name="title" maxlength="20" size="20">
+                        <br>
+                        <h2>口コミ本文</h2>
+                        <textarea required="required" placeholder="本文を入力" name="content"></textarea><br>
+                        <h2>本リンク</h2>
+                        <input type="url" placeholder="紹介ページURLを入力" name="url"><br>
+                        <input type="reset">
+                        <input type="submit">
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript"></script>
 </body>
 </html>
