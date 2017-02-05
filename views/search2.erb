@@ -1,7 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style>
     body{
         background-color:skyblue;
@@ -25,16 +21,15 @@
         height:40px;
     }
 </style>
-</head>
-<body>
 <a href="/search_on">戻る</a><br>
-<% @items.each do |data| %>
+<% @items.each_with_index do |data,count| %>
 <a href="https://www.amazon.co.jp/s/ref=nb_sb_ss_i_5_11?__mk_ja_JP=カタカナ&url=search-alias%3Dstripbooks&field-keywords=<%= data["volumeInfo"]["title"] %>" target="_blank" id="titles"><%= data["volumeInfo"]["title"] %></h3>
 <!--https://www.amazon.co.jp/s/ref=nb_sb_ss_i_5_11?__mk_ja_JP=カタカナ&url=search-alias%3Dstripbooks&field-keywords=   アマゾンnow-->
 <!--http://product.rakuten.co.jp/search/?search_mode=200162&q=   楽天-->
 <img src="<%= data["volumeInfo"]["imageLinks"]["thumbnail"] %>">
 <p id="contents"><%= data["volumeInfo"]["description"] %></p>
+<form action="/post" method="post">
+ <input type="hidden" value="<%=data["volumeInfo"]["title"] %>" name="title">
+ <input type="submit" value="これにする！">
+</form>
 <% end %>
-<script type="text/javascript"></script>
-</body>
-</html>

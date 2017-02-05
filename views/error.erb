@@ -1,0 +1,56 @@
+<style>
+    body{
+        background-color:skyblue;
+    }
+    #keyword{
+        width:200px;
+        height:30px;
+        font-size:30px;
+    }
+    #titles{
+        font-size:30px;
+    }
+    #contents{
+        background-color:blue;
+        color:black;
+    }
+    #back{
+        position:absolute;
+        left:30px;
+        width:50px;
+        height:40px;
+    }
+</style>
+<a href="/search_on">戻る</a><br>
+<h1>申し訳ございません。
+エラーが起きたかお探しの書籍は見つかりませんでした。</h1>
+<h2>もしよければ、お探しの本の情報を登録していただけますか？</h2>
+
+<div class="row">
+    <div class="col-lg-6" id="panels">
+        <div class="panel panel-default" id="panel">
+                <div class="panel-heading">
+                    <span class="glyphiicon glyphiicon-triangle-right"></span>
+                </div>
+                <div class="panel-body">
+                    <form action="/" method="post">
+                        <h2>タイトル(20文字まで)</h2>
+                            <input type="text" required name="title" maxlength="20" size="20" placeholder="タイトルを入力">
+                        <br>
+                        <h2>内容</h2>
+                        <textarea required="required" placeholder="内容を入力" name="content"></textarea><br>
+                        <h2>本リンク</h2>
+                        <input type="url" placeholder="紹介ページURLを入力" name="url"><br>
+                        <h2>著者名</h2>
+                        <input type="text" palceholder="著者名を入力">
+                        <h2>本画像</h2>
+                        <input type="url" placeholder="画像URLを入力" name="image"><br>
+                        <input type="reset">
+                        <input type="submit">
+                    </form>
+                </div>
+        </div>
+    </div>
+    <div>
+
+</div>

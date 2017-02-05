@@ -1,0 +1,18 @@
+body{
+    /*background-color:#c3e8f3;*/
+    background-color:#eaeaea;
+}
+.logo,.tab{
+    display: inline;
+    position: relative;
+}
+#panel{
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+}
+#panels{
+    float:left;
+}
+
+nav{
+    height:110px;
+}
